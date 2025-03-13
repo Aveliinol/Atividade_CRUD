@@ -73,6 +73,7 @@ app.put('/bike/:id', async (req, res) => {
         if (resultado.rows.length === 0) {
             return res.status(404).json({ msg: "Aluguel não encontrado" })
         }
+        const dados = [id, novoStatus, novaData_termino]
         const update = `update aluguel set status = $2, data_termino = $3 where id = $1 returning *`
         await pool.query(update, dados);
         res.status(200).json({ msg: 'Aluguel atualizado com sucesso' })
