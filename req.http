@@ -3,7 +3,7 @@ GET http://localhost:3001/bike
 Content-Type: application/json
 
 ###Listar alugueis pelo id
-GET http://localhost:3001/bike/1
+GET http://localhost:3001/bike/3
 Content-Type: application/json
 
 ###Registrar aluguel
@@ -19,13 +19,13 @@ Content-Type: application/json
 }
 
 ###Atualizar aluguel
-PUT http://localhost:3001/bike/3
+PUT http://localhost:3001/bike/5
 Content-Type: application/json
 
 {
-    "novoStatus": "Atrasado",
-    "novaData_termino": "2025-03-13 21:00:00"
+    "data_termino": "2025-03-13 21:00:00",
+    "status": "Atrasado"
 }
 
 ###Deleta Aluguel
-DELETE http://localhost:3001/bike/1
+DELETE http://localhost:3001/bike/3
