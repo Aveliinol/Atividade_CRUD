@@ -1,9 +1,11 @@
 create table if not exists alugueis(
     id serial primary key,
+    cpf char(11) not null,
     dataInicio timestamp,
     dataTermino timestamp,
     valor decimal(10, 2) not null,
-    status varchar (20) not null check (status in('ativo', 'finalizado', 'atrasado'))
+    status varchar (20) not null check (status in('ativo', 'finalizado', 'atrasado')),
+    Constraint fk_Cliente foreign key (cpf) references cliente(cpf)
 )
 
 create table if not exists cliente(

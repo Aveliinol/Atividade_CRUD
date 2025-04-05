@@ -3,16 +3,16 @@ const AluguelController = require('../controller/index');
 
 const router = express.Router()
 
-router.get('/bike', AluguelController.listarAll)
+router.post('/aluguel', AluguelController.criar)
 
-router. get('/bike/:id', AluguelController.listarPorID)
+router.put('/aluguel/:id', AluguelController.editar)
 
-router.post('/bike', AluguelController.criar)
+router.get('/alugueis', AluguelController.listarAll)
 
-router.put('/bike/:id', AluguelController.editar)
+router. get('/aluguel/:id', AluguelController.listarPorID)
 
-router.delete('/bike', AluguelController.deletarAll)
+router.delete('/alugueis', AluguelController.deletarAll)
 
-router.delete('/bike/:id', AluguelController.deletarPorID)
+router.delete('/aluguel/:id', AluguelController.deletarPorID)
 
 module.exports = router
